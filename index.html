@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      div {
+        background-color: blueviolet;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        margin: 2px;
+      }
+      .line {
+        height: 2px;
+      }
+    </style>
+    <script>
+      var html = "";
+      var square = "<div></div>";
+      var line = "<div class='line'></div>";
+      var br = "<br />";
+      var i = 0;
+
+      while (i < 10) {
+        var rand = Math.round(Math.random() * 100);
+        console.log("random =", rand); //проверка в консоли :)
+        if (rand % 5 == 0) {
+          //   console.log("кратно 5");
+          //html += "end of line-" + i + br; // вариант с подсказками конца линии
+          html += br; //чистовой вариант
+          i = i + 1;
+        } else if (rand % 2 == 0) {
+          //   console.log("кратно 2");
+          html += square;
+        } else html += line; //console.log(" не кратно 2");
+      }
+      document.write(html);
+    </script>
+  </body>
+</html>
