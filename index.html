@@ -41,14 +41,17 @@
         //   html += square;
         // } else html += line; //console.log(" не кратно 2");
         //---------------------------------------------------------------------------
-
+        var j = 0;
         while (rand % 5 !== 0) {
-          if (rand % 2 == 0) {
-            html += square;
-          } else html += line;
+          // if (rand % 2 == 0) {
+          //   html += square;
+          // } else html += line;
+
+          html += rand % 2 == 0 ? square : line;
+          j++;
           rand = Math.round(Math.random() * 100);
         }
-        html += "end of line " + (i + 1) + br;
+        html += "items: " + j + ", end of line: " + (i + 1) + "." + br;
         i = i + 1;
       }
 
